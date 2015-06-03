@@ -21,9 +21,7 @@ Deploying a basic Node.js/Express app.
     * Tab 6. Configure security groups (TCP, HTTP, ...)
 1. Click "Launch"
 1. Select a key pair (or download a new one)
-1. Set the permissions for key on your machine appropriately.
-
+1. Set the permissions for key on your machine appropriately
         sudo chown [username] [keyname].pem
-        sudo chmod 400 [keyname].pem`
-
+        sudo chmod 400 [keyname].pem
 1. If desired, allocate and associate an Elastic IP to the new server instance.
