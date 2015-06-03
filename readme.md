@@ -1,7 +1,10 @@
 # Hello
 
+Deploying a basic Node.js/Express app.
+
 #### Environment Setup
 
-cd hello
-npm install
-DEBUG=hello:* npm start
+    git clone git@github.com:ryangallen/hello.git
+    cd hello
+    npm install
+    DEBUG=hello:* npm start
