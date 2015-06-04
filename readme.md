@@ -58,6 +58,42 @@ Deploying a basic Node.js/Express app.
         git clone git@github.com:ryangallen/hello.git
         cd hello
         npm install
-1. If you allow port 3000 to be accessible in your EC2 security group, you can run the app to test that it works
+1. If you allow port 3000 to be accessible in your EC2 security group, you can run the app to test that it works at [server IP]:3000
+
+        DEBUG=hello:* npm start
+
+#### Configure Nginx
+
+1. Install nginx
+
+        $ sudo apt-get install nginx
+1. Create an nginx enabled site file
+
+        sudo vi /etc/nginx/sites-available/hello
+    and add the following:
+
+        server {
+            listen 80;
+            server_name [server IP];
+
+            ## deny illegal hosts
+            if ($host !~* ^([server IP])$) {
+                return 444;
+            }
+
+            location / {
+                proxy_pass http://localhost:3000;
+            }
+        }
+1. Symlink the site config to the sites-enabled directory
+
+        sudo ln -s /etc/nginx/sites-available/hello /etc/nginx/sites-enabled/hello
+1. Remove default "Welcome to nginx" site
+
+        sudo rm /etc/nginx/sites-enabled/default
+1. Reload Nginx
+
+        sudo service nginx reload
+1. Run the application and check it at [server IP]
 
         DEBUG=hello:* npm start
