@@ -82,6 +82,7 @@ Deploying a basic Node.js/Express app.
             }
 
             location / {
+                proxy_set_header Host $host;
                 proxy_pass http://localhost:3000;
             }
         }
@@ -97,3 +98,21 @@ Deploying a basic Node.js/Express app.
 1. Run the application and check it at [server IP]
 
         DEBUG=hello:* npm start
+
+#### Configure Upstart
+
+1. Create an upstart config file to automatically run the node server
+
+        sudo vi /etc/init/hello.conf
+    and add the following:
+
+        description "Launch hello node app"
+
+        start on net-device-up
+        stop on shutdown
+
+        respawn
+
+        setuid ubuntu
+        chdir /var/www/hello
+        exec /usr/bin/npm start
