@@ -1,9 +1,6 @@
 These playbooks are intended to run on a server maintenance machine.
 
-#### Requirements
-
-* ansible
-* pyyaml
+See http://docs.ansible.com/ for more information.
 
 #### App Server Provisioning
 
