@@ -1,0 +1,9 @@
+---
+- name: Provision the server
+  hosts: hello
+  remote_user: ubuntu
+  sudo: yes
+  roles:
+    - common
+    # - nginx
+    # - nodejs

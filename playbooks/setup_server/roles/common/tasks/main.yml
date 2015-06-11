@@ -1,0 +1,29 @@
+---
+- name: upgrade system
+  action: apt upgrade=dist update_cache=yes
+  remote_user: ubuntu
+  sudo: yes
+
+- name: install git
+  action: apt name=git state=present
+  remote_user: ubuntu
+  sudo: yes
+
+- name: install nginx
+  action: apt name=nginx state=present
+  remote_user: ubuntu
+  sudo: yes
+
+- name: install npm
+  action: apt name=npm state=present
+  remote_user: ubuntu
+  sudo: yes
+
+- name: install emacs
+  action: apt name=emacs state=present
+  remote_user: ubuntu
+  sudo: yes
+
+- name: set permissions
+  action: command chown -R ubuntu {{ www_dir }}
+  sudo: yes

@@ -1,0 +1,9 @@
+---
+app_name: hello
+repo_url: git@github.com:ryangallen/hello.git
+repo_remote: origin
+www_dir: /var/www
+app_dir: /var/www/hello
+
+server_ip: 52.24.245.79
+nodejs_port: 3000
