@@ -1,6 +1,6 @@
 # Hello
 
-Deploying a basic Node.js/Express app. Test change.
+Deploying a basic [Node.js/Express app](52.24.245.79).
 
 ### Dev Environment Setup
 
@@ -116,3 +116,7 @@ Deploying a basic Node.js/Express app. Test change.
         setuid ubuntu
         chdir /var/www/hello
         exec /usr/bin/npm start
+1. Start the service
+
+        start hello
+1. Check the application is running at [server IP]
