@@ -115,6 +115,7 @@ Deploying a basic [Node.js/Express app](52.24.245.79).
 
         setuid ubuntu
         chdir /var/www/hello
+        env NODE_ENV=production
         exec /usr/bin/npm start
 1. Start the service
 
