@@ -70,7 +70,7 @@ Deploying a basic [Node.js/Express app](52.24.245.79).
 1. Create an nginx enabled site file
 
         sudo vi /etc/nginx/sites-available/hello
-    and add the following:
+    and add the following (use the actual server IP, no square brackets):
 
         server {
             listen 80;
